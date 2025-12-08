@@ -7,19 +7,24 @@
 
 <style>
 /* -----------------------
-   PALETTE DE COULEURS
+   MODE CLAIR / SOMBRE
 ------------------------ */
 :root {
-    --color-black: #000000;
-    --color-red: #d62828;
-    --color-blue: #003f88;
-    --color-yellow: #fcbf49;
+    --bg: #f4f4f4;
+    --card: #ffffff;
+    --text: #222;
+    --accent: #1a7;
+    --subtext: #666;
+}
 
-    --bg: var(--color-black);
-    --card: #1a1a1a;
-    --text: var(--color-yellow);
-    --accent: var(--color-blue);
-    --subtext: var(--color-red);
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #121212;
+        --card: #1e1e1e;
+        --text: #eee;
+        --accent: #4cd964;
+        --subtext: #aaa;
+    }
 }
 
 /* -----------------------
@@ -61,7 +66,7 @@ h1 {
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--color-black);
+    border: 3px solid #000000;  /* contour noir */
 }
 
 /* -----------------------
@@ -72,8 +77,7 @@ h1 {
     border-radius: 12px;
     padding: 20px;
     margin-top: 20px;
-    border-left: 5px solid var(--accent);
-    box-shadow: 0 3px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 20px rgba(0,0,0,0.08);
     transition: transform .2s;
 }
 
@@ -136,7 +140,7 @@ h1 {
         <h2>Équivalences amusantes</h2>
         <p>Cela équivaut à <span class="value" id="cafes"></span> cafés ☕</p>
         <p>Cela équivaut à <span class="value" id="netflix"></span> abonnements Netflix 📺</p>
-        <p>Ccela équivaut à <span class="value" id="autry"></span> paires de Autry 👟</p>
+        <p>Cela équivaut à <span class="value" id="autry"></span> paires de Autry 👟</p>
         <p>Cela équivaut à <span class="value" id="flechettes"></span> bornes à fléchettes 🎯</p>
     </div>
 
@@ -148,7 +152,7 @@ h1 {
 // ------------------------------
 // PARAMÈTRES
 // ------------------------------
-const indemnitéParJour = 46.42;
+const indemnitéParJour = 42; // <-- MODIFIÉ
 const dateDépart = new Date("2025-12-02T00:00:00");
 
 // Équivalences
